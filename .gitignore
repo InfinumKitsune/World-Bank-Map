@@ -28,6 +28,7 @@ yarn-error.log
 !.vscode/extensions.json
 !.vscode/mcp.json
 .history/*
+.vs/
 
 # Miscellaneous
 /.angular/cache
@@ -42,4 +43,3 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
-.vs/
