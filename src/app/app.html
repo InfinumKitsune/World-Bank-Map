@@ -1,12 +1,6 @@
 <h1>World Bank Map</h1>
-<img src="assets/world_map.svg" alt="World Map" />
 
-
-<div *ngFor="let c of countries">
-  <h3>{{ c.name }}</h3>
-  <p>Capital: {{ c.capital }}</p>
-  <p>Region: {{ c.region }}</p>
-  <p>Income Level: {{ c.income }}</p>
-  <p>ISO Code: {{ c.iso }}</p>
-  <p>Coordinates: {{ c.latitude }}, {{ c.longitude }}</p>
+<div class="layout">
+<world-map (countrySelected)="onCountrySelected($event)"></world-map>
+<info-panel [country]="selectedCountry"></info-panel>
 </div>

@@ -1,0 +1,12 @@
+.layout{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+world-map {
+    flex: 3;
+}
+
+info-panel{
+    flex: 1;
+}

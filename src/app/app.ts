@@ -1,31 +1,21 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Output, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { InfoPanelComponent } from './world-map/info.component';
+import { MapComponent } from './world-map/map.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [CommonModule, InfoPanelComponent, MapComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('WorldBankSGV');
 
-  countries: any[] = [];
+  selectedCountry: string | null = null;
 
-  ngOnInit() {
-    fetch('https://api.worldbank.org/v2/country?format=json')
-      .then(res => res.json())
-      .then(data => {
-        this.countries = data[1].map((c: any) => ({
-          name: c.name,
-          capital: c.capitalCity,
-          region: c.region.value,
-          income: c.incomeLevel.value,
-          iso: c.iso2Code,
-          longitude: c.longitude,
-          latitude: c.latitude
-        }));
-      });
+  onCountrySelected(iso: string) {
+    this.selectedCountry = iso;
   }
 }

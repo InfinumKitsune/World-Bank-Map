@@ -1,0 +1,10 @@
+#mapContainer path {
+    fill: #ccc;
+    stroke: #333;
+    stroke-width: 8px;
+    cursor: pointer;
+}
+
+#mapContainer path.hover {
+    fill: #4fa3ff;
+}
