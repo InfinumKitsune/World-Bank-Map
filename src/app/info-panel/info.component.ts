@@ -6,12 +6,7 @@ import { CountryService } from '../country.service';
   selector: 'info-panel',
   standalone: true,
   imports: [CommonModule],
-  template: `
-      <div id="infoContainer">
-        <h2 *ngIf="country">Selected Country: {{ country }}</h2>
-        <p *ngIf="!country">Select a country.</p>
-      </div>
-  `,
+  templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
 export class InfoPanelComponent {

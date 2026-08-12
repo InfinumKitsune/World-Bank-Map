@@ -1,7 +1,7 @@
 import { Component, signal, Output, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { InfoPanelComponent } from './world-map/info.component';
+import { InfoPanelComponent } from './info-panel/info.component';
 import { MapComponent } from './world-map/map.component';
 
 @Component({

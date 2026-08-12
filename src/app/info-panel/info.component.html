@@ -1,0 +1,19 @@
+<div id="header">
+  <h2 *ngIf="countryInfo">Selected Country: {{ countryInfo.name }}</h2>
+  <p *ngIf="!countryInfo">Select a country.</p>
+</div>
+
+<div id="cInfo">
+  <div *ngIf="countryInfo; else noCountry">
+    <p><strong>Capital:</strong> {{ countryInfo.capital }}</p>
+    <p><strong>Region:</strong> {{ countryInfo.region }}</p>
+    <p><strong>Income:</strong> {{ countryInfo.income }}</p>
+    <p><strong>ISO 2 Code:</strong> {{ countryInfo.iso2 }}</p>
+    <p><strong>Coordinates:</strong> {{ countryInfo.longitude }}, {{ countryInfo.latitude }}</p>
+  </div>
+
+  <ng-template #noCountry>
+    <p>Country info will appear here.</p>
+  </ng-template>
+</div>
+
