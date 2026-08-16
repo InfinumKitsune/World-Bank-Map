@@ -1,6 +1,12 @@
 <h1>World Bank Map</h1>
 
+<div class="loading-overlay" *ngIf="loading">
+  <div class="spinner"></div>
+</div>
+
 <div class="layout">
-<world-map (countrySelected)="onCountrySelected($event)"></world-map>
-<info-panel [country]="selectedCountry"></info-panel>
+  <world-map (countrySelected)="onCountrySelected($event)"></world-map>
+  <info-panel
+  *ngIf="selectedCountry != null"[selectedCountryInfo]="selectedCountryInfo">
+  </info-panel>
 </div>

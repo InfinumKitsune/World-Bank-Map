@@ -1,8 +1,6 @@
-import {
-  Component, ElementRef, AfterViewInit, Output, EventEmitter, Inject, PLATFORM_ID
-} from '@angular/core';
+import { Component, ElementRef, AfterViewInit, Output, EventEmitter, Inject, PLATFORM_ID, NgZone }
+  from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
 
 @Component({
   selector: 'world-map',
@@ -14,21 +12,31 @@ export class MapComponent implements AfterViewInit {
 
   @Output() countrySelected = new EventEmitter<string>();
 
-  constructor(private el: ElementRef,
-    @Inject(PLATFORM_ID) private platformId: Object
+  constructor(
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private zone: NgZone
   ) { }
 
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      fetch('assets/world_map.svg')
-        .then(response => response.text())
-        .then(svg => {
-          const container = this.el.nativeElement.querySelector('#mapContainer');
-          container.innerHTML = svg;
+    if (!isPlatformBrowser(this.platformId)) return;
 
-          this.attachEvents(container);
-        });
-    }
+    setTimeout(() => {
+      this.zone.run(() => {
+        this.loadMap();
+      });
+    });
+  }
+
+  private loadMap() {
+    fetch('assets/world_map.svg')
+      .then(response => response.text())
+      .then(svg => {
+        const container = this.el.nativeElement.querySelector('#mapContainer');
+        container.innerHTML = svg;
+
+        this.attachEvents(container);
+      });
   }
 
   private attachEvents(container: HTMLElement) {
@@ -37,7 +45,6 @@ export class MapComponent implements AfterViewInit {
     countries.forEach((country: any) => {
       country.addEventListener('mouseenter', () => {
         country.classList.add('hover');
-        console.log("Mouse over " + country);
       });
 
       country.addEventListener('mouseleave', () => {
@@ -45,11 +52,15 @@ export class MapComponent implements AfterViewInit {
       });
 
       country.addEventListener('click', () => {
-        const iso = country.getAttribute('id') || country.getAttribute('name');
-        this.countrySelected.emit(iso);
-        console.log("Clicked: ", iso);
+        this.zone.run(() => {
+          const iso =
+            country.getAttribute('id') ||
+            country.getAttribute('name');
+          this.countrySelected.emit(iso);
+        });
       });
     });
   }
 }
+
 

@@ -12,6 +12,7 @@ export class CountryService {
 
   getCountryDetails(code: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${code}?format=json`);
+    
   }
 }
 
