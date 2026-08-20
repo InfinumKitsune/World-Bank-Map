@@ -8,6 +8,18 @@ Student ID: 011298266
 Angular Version: 22.1.3
 
 
+After completing step G initially I ran into an issue with the parsed JSON data not updating immediately.
+After several attempts to rectify this issue, I could not and reverted back to step C where I then reset
+my HTML setup to show two columns. Commit step was coupled in with commit for step C.
+
+Commit for step F was also done in the initial HTML set up as I injected my SVG into my HTML in step C.
+
+
+
+
+
+
+
 # WorldBankSGV
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.3.
