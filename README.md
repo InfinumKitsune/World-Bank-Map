@@ -1,81 +1,74 @@
-<strong> **DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
-# WESTERN GOVERNORS UNIVERSITY 
-## D280 – JAVASCRIPT PROGRAMMING
-Welcome to JavaScript Programming! 
-For specific task instructions and requirements for this assessment, please refer to the course page.
+# World Bank Map
 
-Student ID: 011298266
-Angular Version: 22.1.3
+## Description:
 
+A single-page Angular application that allows users to explore global data interactively. Users can select countries on a map to view detailed statistics sourced in real time from the World Bank API, displayed in a dynamic Country Information panel alongside a supporting data table.
 
-After completing step G initially I ran into an issue with the parsed JSON data not updating immediately.
-After several attempts to rectify this issue, I could not and reverted back to step C where I then reset
-my HTML setup to show two columns. Commit step was coupled in with commit for step C.
+## Features:
 
-Commit for step F was also done in the initial HTML set up as I injected my SVG into my HTML in step C.
+Fully responsive layout
 
+Real-time form validation with reactive forms
 
+RESTful API integration via Angular HttpClient
 
+Client-side routing with Angular Router
 
+Component-based architecture for reusable UI
 
+## Technologies:
+Framework: Angular 17+
 
+Language: TypeScript 5.x
 
-# WorldBankSGV
+Styling: CSS / SCSS / Angular Material
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.3.
+State Management: RxJS / Services
 
-## Development server
+HTTP Client: Angular HttpClient
 
-To start a local development server, run:
+Routing: Angular Router
 
-```bash
+Build Tool: Angular CLI
+
+## Installation Prerequisites:
+
+Node.js v18 or higher
+
+npm v9 or higher
+
+Angular CLI v17 or higher
+
+## Install Angular CLI globally:
+
+npm install -g @angular/cli
+
+## Clone and install:
+
+git clone https://github.com/InfinumKitusne/WorldBankMap.git
+cd worldbankmap
+npm install
+
+# Usage
+
+## Development server:
 ng serve
-```
+Navigate to http://localhost:4200/ — the app reloads automatically on file changes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Production build:
+ng build --configuration production
+Output goes to the dist/ directory.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
+## Run unit tests:
 ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+License
+This project is licensed under the MIT License. See LICENSE for details.
 
-```bash
-ng e2e
-```
+Author
+Raymond Fox
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+GitHub: https://github.com/InfinumKitsune
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+LinkedIn: https://linkedin.com/in/raymond-fox-2a5057107
