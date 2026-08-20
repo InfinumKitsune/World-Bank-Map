@@ -8,8 +8,6 @@ A single-page Angular application that allows users to explore global data inter
 
 Fully responsive layout
 
-Real-time form validation with reactive forms
-
 RESTful API integration via Angular HttpClient
 
 Client-side routing with Angular Router
@@ -45,7 +43,7 @@ npm install -g @angular/cli
 
 ## Clone and install:
 
-git clone https://github.com/InfinumKitusne/WorldBankMap.git
+git clone https://github.com/InfinumKitsune/World-Bank-Map.git
 cd worldbankmap
 npm install
 
@@ -63,12 +61,14 @@ Output goes to the dist/ directory.
 ng test
 
 
-License
+# License
 This project is licensed under the MIT License. See LICENSE for details.
 
-Author
+# Author
 Raymond Fox
 
-GitHub: https://github.com/InfinumKitsune
+## GitHub: 
+https://github.com/InfinumKitsune
 
-LinkedIn: https://linkedin.com/in/raymond-fox-2a5057107
+## LinkedIn: 
+https://linkedin.com/in/raymond-fox-2a5057107
