@@ -25,13 +25,10 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: |
-          npm run build -- --configuration=production --base-href=/World-Bank-Map/
-          touch dist/WorldBankSGV/.nojekyll
-
+        run: npm run build -- --configuration=production --base-href=/World-Bank-Map/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/WorldBankSGV
+          folder: dist/WorldBankSGV/browser
           branch: gh-pages
