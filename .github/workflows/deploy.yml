@@ -25,7 +25,9 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: npm run build -- --configuration=production --base-href=/World-Bank-Map/
+        run: |
+          npm run build -- --configuration=production --base-href=/World-Bank-Map/
+          cp dist/WorldBankSGV/browser/map/index.html dist/WorldBankSGV/browser/index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
