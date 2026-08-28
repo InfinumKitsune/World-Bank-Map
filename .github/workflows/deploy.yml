@@ -25,7 +25,10 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: npm run build -- --configuration=production --base-href=/World-Bank-Map/
+        run: |
+          npm run build -- --configuration=production --base-href=/World-Bank-Map/
+          echo "=== Displaying the contents of the dist folder ==="
+          ls -R dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
