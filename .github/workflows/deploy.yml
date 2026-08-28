@@ -32,6 +32,3 @@ jobs:
         with:
           folder: dist/WorldBankSGV
           branch: gh-pages
-        with:
-          folder: dist/world-bank-map/browser
-          branch: gh-pages
